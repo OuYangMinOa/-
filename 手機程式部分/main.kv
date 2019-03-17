@@ -1,0 +1,121 @@
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+#kivy.require("1.10.0")
+# -*- coding: utf8 -*-
+ScreenManagement:
+	MainScreen:
+	input_name:
+	connect_ok:
+	connect_start:
+<connect_start>
+	name:'connect_start'
+	id: name,say_ok
+	canvas:
+	    Color:
+	        rgba:0.5,1,0.5,1
+	    Rectangle:
+        	pos: self.pos
+        	size: self.size
+	Label:
+		pos_hint:{'x':0.35,'y':.85}
+		size_hint:0.3,0.15
+		font_size:50
+		color: 0,0,0,1
+		id: name
+	Label:
+		pos_hint:{'x':.125,'y':.2}
+		size_hint:0.75,0.65
+		font_size:50
+		color: 0,0,0,1
+		id: say_ok
+<connect_ok>
+	name:'connect_ok'
+	id: name,say_ok
+	canvas:
+	    Color:
+	        rgba:0.5,1,0.5,1
+	    Rectangle:
+        	pos: self.pos
+        	size: self.size
+	Label:
+		pos_hint:{'x':.3,'y':.7}
+		size_hint:0.35,0.2
+		font_size:50
+		color: 0,0,0,1
+		id: name
+	Label:
+		pos_hint:{'x':.3,'y':.45}
+		size_hint:0.35,0.2
+		font_size:50
+		color: 0,0,0,1
+		id: say_ok
+
+<MainScreen>:
+	name:'MainScreen'
+	id: name,start, design
+	canvas:
+	    Color:
+	        rgba:0.5,1,0.5,1
+	    Rectangle:
+        	pos: self.pos
+        	size: self.size
+	Label:
+		pos_hint:{'x':.3,'y':.7}
+		size_hint:0.35,0.2
+		font_size:50
+		color: 0,0,0,1
+		id: name
+	Button:
+		on_release:app.root.current="input_name" 
+		background_normal: "buttonn.png"
+		background_down: 'buttonn.png'
+		pos_hint:{'x':.2,'y':.3}
+		size_hint:0.6,0.3
+		id: start
+	Button:
+		on_release:root.design_mode() 
+		background_normal: "buttonn.png"
+		background_down: 'buttonn.png'
+		pos_hint:{'x':.2,'y':.1}
+		size_hint:0.6,0.3
+		id: design
+
+<input_name>
+	name:'input_name'
+	id: name_in,port_in,accept,port_how
+	canvas:
+	    Color:
+	        rgba:0.5,1,0.5,1
+	    Rectangle:
+        	pos: self.pos
+        	size: self.size
+	Label:
+		pos_hint:{'x':.3,'y':.7}
+		size_hint:0.35,0.2
+		color: 0,0,0,1
+		id: name_in
+	
+	TextInput:
+		pos_hint:{'x':.2,'y':.55}
+		size_hint:0.6,0.1
+		auto_indent:False
+		multiline:False
+		write_tab:True
+		id:port_in
+
+	Button:
+		on_release:root.check()
+		background_normal: "buttonn.png"
+		background_down: "buttonn.png"
+		pos_hint:{'x':.3,'y':.3}
+		size_hint:0.4,0.2
+		id:accept
+	Button:
+		on_release:root.HOW()
+		background_normal: "buttonn.png"
+		background_down: "buttonn.png"
+		pos_hint:{'x':.3,'y':.1}
+		size_hint:0.4,0.2
+		id:port_how
+
+
+

@@ -1,0 +1,9 @@
+Media Source Error Report :
+
+Error type : Video cut
+Material type : Video
+Error information : Unknown
+Material filename : D:\物理實驗報告\穿戴是\影片\VID20180617002636.avi
+Detailed information : hr = 0x80040217, at ..\CES_Source\Src\CES_Engine\CES_MediaLoader.CPP:3316
+Source filter GUID : E436EBB5-524F-11CE-9F53-0020AF0BA770
+Splitter filter GUID : 1B544C20-FD0B-11CE-8C63-00AA0044B51E
